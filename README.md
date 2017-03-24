@@ -2,4 +2,38 @@
 
 ![py35](https://camo.githubusercontent.com/633acad03f4dbbaa8cca6bee5902207fd3b27a34/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d332e352d7265642e737667)
 
-赶集网的爬虫
+这是一个赶集网的爬虫，主要爬取赶集网上的招聘的板块上的信息。
+
+## 依赖
+
+- MongoDB
+- requests
+- pymongo
+- BeautifulSoup and lxml
+
+## 关于爬虫
+
+### 准备
+
+1. 确定已安装MongoDB，Python3.5, 浏览器建议使用Chrome。
+2. 安装需要的Python的第三方库:
+
+	```
+	在 terminal(cmd) 中输入：
+
+	win:
+
+	pip install requests, BeautifulSoup4, pymongo, lxml
+
+	linux:
+
+	sudo pip3 install requests, BeautifulSoup4, pymongo, lxml
+
+	```
+
+3. 如果你知道更好：
+	- 一点 HTML CSS and MongoDB
+
+### 整体结构
+![stru](test.jpg)
+列表页为 
