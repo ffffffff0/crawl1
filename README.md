@@ -32,8 +32,13 @@
 	```
 
 3. 如果你知道更好：
-	- 一点 HTML CSS and MongoDB
+	- 一点 HTML CSS HTTP and MongoDB
 
 ### 整体结构
 ![stru](test.jpg)
-列表页为 
+
+spider 1 从[列表页](http://bj.ganji.com/zhaopin/)中获取页面下全部的个分类的链接，并储存到 url_list 这个collection中。
+
+Spider 2 从url_list 中获取储存的链接并解析，这里我每个分类只抓取了100页，获取链接的详情页，将详情页中的想要抓取的信息储存到 item_info 中。
+
+###
