@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pymongo
 import re
 import random
+import time
 
 client = pymongo.MongoClient('localhost', 27017, connect=False)
 ganji = client['ganji']
@@ -31,6 +32,7 @@ proxies = {'http': proxy_ip}
 
 def get_link_form(channel, page):
     url_views = '{0}o{1}/'.format(channel, str(page))
+	time.sleep(1)
     web_data = requests.get(url_views, headers=header, proxies=proxies)
     soup = BeautifulSoup(web_data.text, 'lxml')
     if soup.find('ul', 'pageLink'):

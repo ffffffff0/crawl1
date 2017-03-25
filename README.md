@@ -65,7 +65,7 @@ print(data.text)
 # 由于网站可能限制了一个ip访问的频率，所以使用代理ip
 
 ```
-headers 的位置：
+*headers 的位置*：
 ![img](headers.png)
 
 这里的 BeautifulSoup and lxml的作用：
@@ -160,3 +160,4 @@ list(test)
 
 运行时的截图：
 ![sometime](sometime.png)
+![sometime](sometime2.png)
