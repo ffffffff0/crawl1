@@ -12,6 +12,6 @@ from page_spider import url_list1
 if __name__ == '__main__':
     pool = Pool(4)
     for link in url_list1.find({}, {'_id': 0, 'url': 1}):
-        pool.apply_async(get_item_info, args=(link['url'],))
+        pool.apply(get_item_info, args=(link['url'],))
     pool.close()
     pool.join()
