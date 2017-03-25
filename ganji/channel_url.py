@@ -7,16 +7,19 @@ host_url = 'http://bj.ganji.com'
 
 
 def get_channel_url(url):
+	# 此时程序会暂停2秒
     time.sleep(2)
     web_data = requests.get(url)
     soup = BeautifulSoup(web_data.text, 'lxml')
     links = soup.select('div.f-all-news > dl > dt > a')
     for link in links:
+		# 组成一个完整的url
         item_link = host_url + link.get('href')
         print(item_link)
 
-
+# 运行函数
 get_channel_url(start_url)
+# channel_list 为运行结果
 channel_list = '''
 http://bj.ganji.com/zpshichangyingxiao/
 http://bj.ganji.com/zpjigongyibangongren/

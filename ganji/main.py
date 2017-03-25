@@ -11,6 +11,7 @@ from page_spider import url_list1
 
 if __name__ == '__main__':
     pool = Pool(4)
+	# 从数据库中将url迭代出来
     for link in url_list1.find({}, {'_id': 0, 'url': 1}):
         pool.apply(get_item_info, args=(link['url'],))
     pool.close()
