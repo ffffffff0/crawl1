@@ -161,7 +161,7 @@ list(test)
 ###  count 文件主要是在main.py 运行时， 来检查数据库中数据的数量。
 
 运行时的截图：
-![sometime](sometime.png)
+![sometime](sometime1.png)
 ![sometime](sometime2.png)
 
 ###
