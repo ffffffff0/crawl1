@@ -158,10 +158,10 @@ list(test)
 [1, 4, 9, 16, 16, 25, 36, 49, 64, 81]
 
 ```
-###  count 文件主要是在main.py 运行时， 来检查数据库中数据的数量。
+###  count 文件主要是在main.py 运行时， 每5秒来检查一次数据库中数据的数量。
 
 运行时的截图：
 ![sometime](sometime1.png)
 ![sometime](sometime2.png)
 
-###
+### 数据分析
