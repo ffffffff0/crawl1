@@ -66,6 +66,7 @@ print(data.text)
 
 ```
 headers 的位置：
+![img](headers.png)
 
 这里的 BeautifulSoup and lxml的作用：
 > Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库, 这里我使用 lxml 来解析。
