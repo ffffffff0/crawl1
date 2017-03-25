@@ -65,6 +65,8 @@ print(data.text)
 # 由于网站可能限制了一个ip访问的频率，所以使用代理ip
 
 ```
+headers 的位置：
+
 这里的 BeautifulSoup and lxml的作用：
 > Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库, 这里我使用 lxml 来解析。
 
@@ -118,7 +120,7 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 
 一个正则表达式的测试网站：[PyRegex](http://www.pyregex.com/)
 
-##### 其中的函数 get_link_form 的一些细节：
+#### 其中的函数 get_link_form 的一些细节：
 
 1. url_views 是对其url 的观察构造的，例如 http://bj.ganji.com/zpshichangyingxiao/o3/ 为其第三页的url， 我将其写成 url_views = '{0}o{1}/'.format(channel, str(page)) ， channel 和 page 为这个函数的参数
 
@@ -126,7 +128,7 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 
 3. 由于findAll所返回的对象是一个列表，所以用for循环来进行迭代并储存。
 
-##### 其中get_item_info 的细节：
+#### 其中get_item_info 的细节：
 
 1. 与上一个函数相似，这个主要是将每一个职位招聘的详情信息，提取并储存。但是要判断一下，这个商品是否已经成交或者下架，如果成交或者下架，那么访问这个页面时状态码应该返回 404. 所以用if判断状态码来进行爬去。
 
@@ -154,3 +156,6 @@ list(test)
 
 ```
 ###  count 文件主要是在main.py 运行时， 来检查数据库中数据的数量。
+
+运行时的截图：
+![sometime](sometime.png)

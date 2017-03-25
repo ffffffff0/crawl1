@@ -6,7 +6,7 @@ import random
 
 client = pymongo.MongoClient('localhost', 27017, connect=False)
 ganji = client['ganji']
-item_info = ganji['item_info']
+item_info = ganji['item_info1']
 url_list1 = ganji['url_list1']
 
 # spider1
@@ -65,4 +65,3 @@ def get_item_info(url):
         }
         item_info.insert_one(data)
         print(data)
-
