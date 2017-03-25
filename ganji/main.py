@@ -15,3 +15,7 @@ if __name__ == '__main__':
         pool.apply(get_item_info, args=(link['url'],))
     pool.close()
     pool.join()
+
+# if __name__ == '__main__':
+# 	pool = Pool(4)
+# 	pool.map(get_links_from, channel_list.split())

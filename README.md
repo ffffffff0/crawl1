@@ -65,6 +65,8 @@ print(data.text)
 # 由于网站可能限制了一个ip访问的频率，所以使用代理ip
 
 ```
+*关于代理ip* 可以在 http://cn-proxy.com/ 找到， 当然也可以写一个爬虫，将代理爬下来。
+
 *headers 的位置*：
 ![img](headers.png)
 
@@ -161,3 +163,5 @@ list(test)
 运行时的截图：
 ![sometime](sometime.png)
 ![sometime](sometime2.png)
+
+###
