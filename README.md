@@ -35,7 +35,6 @@
 	- 一点 HTML CSS HTTP and MongoDB
 
 ### 整体结构
-![stru](test.jpg)
 
 - Spider 1 从[列表页](http://bj.ganji.com/zhaopin/)中获取页面下全部的个分类的链接，然后将分类的链接储存到 url_list 这个collection中。
 
@@ -45,7 +44,6 @@
 
 #### channel_url文件 为将招聘板块中的招聘职位分类的链接提取出来。
 
-![channe](channe.png)
 
 这里的 [requests](http://docs.python-requests.org/zh_CN/latest/index.html) 的作用:
 > Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用。
@@ -90,7 +88,7 @@ img = soup.find('img', {'hidefocus': "true"})
 
 ```
 channel_url 中定义了一个函数， 来进行获取链接，我这里将运行的结果，赋给了channel_list, 当然也可以放进数据库。
-![image](channel_list.png)
+![images](chanenl_list.png)
 
 #### page_spider 是进行爬取的主要文件， 其中定义两个函数，是进行爬取信息的两个爬虫。
 
@@ -128,8 +126,6 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 
 #### 其中的函数 get_link_form 的一些细节：
 
-![links](links.png)
-
 1. url_views 是对其url 的观察构造的，例如 http://bj.ganji.com/zpshichangyingxiao/o3/ 为其第三页的url， 我将其写成 url_views = '{0}o{1}/'.format(channel, str(page)) ， channel 和 page 为这个函数的参数
 
 2. 我的计划是爬去100页， 但是有的页面可能没有100页， 用if来判断是否有要爬去的信息，有则爬，无则pass， 具体的判断的依据是 *每个页面下都会有的 下一页的选项*。
@@ -138,8 +134,6 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 
 
 #### 其中get_item_info 的细节：
-
-![info](inof.png)
 
 1. 与上一个函数相似，这个主要是将每一个职位招聘的详情信息，提取并储存。但是要判断一下，这个商品是否已经成交或者下架，如果成交或者下架，那么访问这个页面时状态码应该返回 404. 所以用if判断状态码来进行爬去。
 
