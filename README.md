@@ -31,7 +31,7 @@
 
 	```
 
-3. 如果你知道更好：
+3. 如果你知道更好(不知道也可以)：
 	- 一点 HTML CSS HTTP and MongoDB
 
 ### 整体结构
@@ -44,7 +44,13 @@
 
 ### 代码
 
-#### channel_url文件 为将招聘板块中的招聘职位分类的链接提取出来。
+### 首先要观察爬取网站的页面结构
+
+- 首先从[起始页](http://bj.ganji.com/zhaopin/)来看，我的目的是将其中的 销售， 行政， 后勤等这样的类别的链接提取出来。
+- 其次到这样的[类别页](http://bj.ganji.com/zpshichangyingxiao/)中， 我的目的是将 所有招聘职位的链接 爬取下来并储存到url_list表中，
+- 然后从数据库url_list表中，迭代其中的链接，解析出[详情页](http://bj.ganji.com/zpfangjingjiren/2593320747x.htm)，提取出我想要的信息。就是这样一步一步的深入它的页面结构
+
+### channel_url文件 为将招聘板块中的招聘职位分类的链接提取出来。
 
 
 这里的 [requests](http://docs.python-requests.org/zh_CN/latest/index.html) 的作用:
@@ -92,7 +98,7 @@ img = soup.find('img', {'hidefocus': "true"})
 channel_url 中定义了一个函数， 来进行获取链接，我这里将运行的结果，赋给了channel_list, 当然也可以放进数据库。
 ![images](chanenl_list.png)
 
-#### page_spider 是进行爬取的主要文件， 其中定义两个函数，是进行爬取信息的两个爬虫。
+### page_spider 是进行爬取的主要文件， 其中定义两个函数，是进行爬取信息的两个爬虫。
 
 这里的 pymongo:
 > PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python. This documentation attempts to explain everything you need to know to use PyMongo.
