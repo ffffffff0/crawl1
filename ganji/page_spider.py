@@ -8,8 +8,8 @@ import time
 # 连接mongodb
 client = pymongo.MongoClient('localhost', 27017, connect=False)
 ganji = client['ganji']
-item_info = ganji['item_info1']
-url_list1 = ganji['url_list1']
+item_info = ganji['item_info']
+url_list = ganji['url_list']
 
 # 设置头部
 header = {
@@ -43,7 +43,7 @@ def get_link_form(channel, page):
 		# 利用正则匹配到 url
         links = soup.findAll('a', href=re.compile('^(https?://)?bj\.ganji\.com.*\.htm'))
         for link in links:
-            url_list1.insert_one({'url': link.get('href')})
+            url_list.insert_one({'url': link.get('href')})
             print(link.get('href'))
     else:
         pass

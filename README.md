@@ -163,5 +163,8 @@ list(test)
 ###  count 文件主要是在main.py 运行时， 每5秒来检查一次数据库中数据的数量。
 
 运行时的截图：
-![sometime](sometime1.png)
 ![sometime](sometime2.png)
+
+## 爬取结果
+
+我的MongoDB中， 其中 url_list的 count 为:*120166*, item_info的 count为:*30726*.
