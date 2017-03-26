@@ -36,6 +36,8 @@
 
 ### 整体结构
 
+![test](test.jpg)
+
 - Spider 1 从[列表页](http://bj.ganji.com/zhaopin/)中获取页面下全部的个分类的链接，然后将分类的链接储存到 url_list 这个collection中。
 
 - Spider 2 从url_list 中获取储存的链接并解析，获取链接的详情页，将详情页中的想要抓取的信息储存到 item_info 中。
