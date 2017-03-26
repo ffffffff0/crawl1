@@ -163,5 +163,3 @@ list(test)
 运行时的截图：
 ![sometime](sometime1.png)
 ![sometime](sometime2.png)
-
-### 数据分析
