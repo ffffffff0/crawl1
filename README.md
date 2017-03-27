@@ -44,7 +44,7 @@
 
 ### 流程图
 
-![liuchengtu](liuchengtu.svg)
+![liuchengtu](liuchengtu.png)
 
 ### 代码
 
@@ -174,12 +174,13 @@ list(test)
 ```
 ###  count 文件主要是在main.py 运行时， 每5秒来检查一次数据库中数据的数量。
 
-#### 运行时的截图：
-![sometime](sometime2.png)
-
 #### 效果图
 ![xiaoguotu1](xiaoguotu1.png)
 ![xiaoguotu2](xiaoguotu2.png)
+
+#### 运行时的截图：
+![sometime](sometime2.png)
+
 
 ## 爬取结果
 
