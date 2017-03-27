@@ -152,9 +152,7 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 
 ### main 文件主要是调用page_spider的爬虫进行爬取
 
-multiprocessing 模块：
-
-multiprocessing 为python的多进程模块，采用多进程。
+multiprocessing 为python的多进程模块，采用多进程爬取。
 
 ```
 from multiprocessing import Pool
