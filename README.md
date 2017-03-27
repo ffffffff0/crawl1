@@ -1,7 +1,7 @@
 
 ![py35](https://camo.githubusercontent.com/633acad03f4dbbaa8cca6bee5902207fd3b27a34/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d332e352d7265642e737667)
 
-# homework-exercises
+# ganji_spider
 
 这是一个赶集网的爬虫，爬取赶集网上的招聘的板块上的信息并储存。
 
