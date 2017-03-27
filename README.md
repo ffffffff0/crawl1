@@ -42,6 +42,10 @@
 
 - Spider 2 从url_list 中获取储存的链接并解析，获取链接的详情页，将详情页中的想要抓取的信息储存到 item_info 中。
 
+### 流程图
+
+![liuchengtu](liuchengtu.svg)
+
 ### 代码
 
 ### 首先要观察爬取网站的页面结构
@@ -170,8 +174,12 @@ list(test)
 ```
 ###  count 文件主要是在main.py 运行时， 每5秒来检查一次数据库中数据的数量。
 
-运行时的截图：
+#### 运行时的截图：
 ![sometime](sometime2.png)
+
+#### 效果图
+![xiaoguotu1](xiaoguotu1.png)
+![xiaoguotu2](xiaoguotu2.png)
 
 ## 爬取结果
 
