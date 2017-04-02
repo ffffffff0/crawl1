@@ -3,6 +3,7 @@
 
 # spider
 这是一个赶集网的爬虫，爬取赶集网上的招聘的板块上的信息并储存。
+*以深度优先来进行爬取*
 
 ## 依赖
 
@@ -31,7 +32,7 @@
 
 	```
 
-3. 如果你知道更好(不知道也可以)：
+3. 如果你知道更好：
 	- 一点 HTML CSS HTTP and MongoDB
 
 ### 整体结构
@@ -134,7 +135,7 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 ```
 正则表达式可以参见：[正则表达式](http://www.runoob.com/python/python-reg-expressions.html)
 
-一个正则表达式的测试网站：[PyRegex](http://www.pyregex.com/)
+正则表达式的测试网站：[PyRegex](http://www.pyregex.com/)
 
 #### 其中的函数 get_link_form 的一些细节：
 
@@ -175,9 +176,6 @@ list(test)
 #### 效果图
 ![xiaoguotu1](xiaoguotu1.png)
 ![xiaoguotu2](xiaoguotu2.png)
-
-#### 运行时的截图：
-![sometime](sometime2.png)
 
 
 ## 爬取结果

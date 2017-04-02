@@ -9,7 +9,7 @@ import time
 client = pymongo.MongoClient('localhost', 27017, connect=False)
 ganji = client['ganji']
 item_info = ganji['item_info']
-url_list = ganji['url_list']
+url_list = ganji['url_list2']
 
 # 设置头部
 header = {
