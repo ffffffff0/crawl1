@@ -76,9 +76,10 @@ print(data.text)
 # 如 chrome: 检查 > network > headers
 # 使用headers 浏览器请求的头部
 # 由于网站可能限制了一个ip访问的频率，所以使用代理ip
+wed = requests.get('http://www.bing.com', headers=headers, proxies=proxies)
 
 ```
-*关于代理ip* 可以在 http://cn-proxy.com/ 找到， 当然也可以写一个爬虫，将代理爬下来。
+*关于代理ip* 可以在 http://cn-proxy.com/ 找到， 当然也可以写一个爬虫，将代理爬下来,*其实有种东西叫代理池*.
 
 *headers 的位置*：
 ![img](headers.png)
