@@ -55,7 +55,7 @@
 - 其次到这样的[类别页](http://bj.ganji.com/zpshichangyingxiao/)中， 我的目的是将 所有招聘职位的链接 爬取下来并储存到url_list表中，
 - 然后从数据库url_list表中，迭代其中的链接，解析出[详情页](http://bj.ganji.com/zpfangjingjiren/2593320747x.htm)，提取出我想要的信息。就是这样一步一步的深入它的页面结构
 
-### channel_url文件 为将招聘板块中的招聘职位分类的链接提取出来。
+### channel_url文件 将招聘板块中的招聘职位分类的链接提取出来。
 
 
 这里的 [requests](http://docs.python-requests.org/zh_CN/latest/index.html) 的作用:
@@ -72,9 +72,9 @@ data = requests.get('http://www.baidu.com')
 print(data.text)
 # .....
 # 其中还可以设置 headers and proxies
-# headers 是访问一个网站的头部信息， 通常在可在 浏览器的开发者工具中看到
+# headers 是访问一个网站的头部信息， 通常在可在 chrome的开发者工具中看到
 # 如 chrome: 检查 > network > headers
-# 使用headers 的作用是看起来像一个人一样的访问
+# 使用headers 浏览器请求的头部
 # 由于网站可能限制了一个ip访问的频率，所以使用代理ip
 
 ```
@@ -130,14 +130,15 @@ python 中的正则表达式为 re模块， 基本用法：
 ```
 import re
 # 进行正则匹配
-re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
+href = re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
+# 把正则表达式编译成一个正则表达式对象, 来匹配 href
 
 ```
 正则表达式可以参见：[正则表达式](http://www.runoob.com/python/python-reg-expressions.html)
 
 正则表达式的测试网站：[PyRegex](http://www.pyregex.com/)
 
-#### 其中的函数 get_link_form 的一些细节：
+#### 函数 get_link_form：
 
 1. url_views 是对其url 的观察构造的，例如 http://bj.ganji.com/zpshichangyingxiao/o3/ 为其第三页的url， 我将其写成 url_views = '{0}o{1}/'.format(channel, str(page)) ， channel 和 page 为这个函数的参数
 
@@ -146,7 +147,7 @@ re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 3. 由于findAll所返回的对象是一个列表，所以用for循环来进行迭代并储存。
 
 
-#### 其中get_item_info 的细节：
+#### 函数get_item_info：
 
 1. 与上一个函数相似，这个主要是将每一个职位招聘的详情信息，提取并储存。但是要判断一下，这个商品是否已经成交或者下架，如果成交或者下架，那么访问这个页面时状态码应该返回 404. 所以用if判断状态码来进行爬去。
 
@@ -190,6 +191,5 @@ list(test)
 
 # 附加内容
 
-> 我觉得的我在工作室的角色：类似于Dota2中的4号位*(四号位的英雄基本处于团队中辅助的位置,游走或者野区发育)* .
-
-> 我更希望打3号位*(队伍中Gank位，一般都由生存能力佳，前期靠技能吃饭，有一定的后期能力的英雄担任,需要极其强大的操作能力)*.
+> 我觉得的我在工作室的角色：类似于Dota2中的4号位*(游走或者野区发育)* .
+> 我更希望打3号位*(Gank位)*.
