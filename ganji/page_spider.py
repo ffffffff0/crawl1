@@ -70,7 +70,9 @@ def get_item_info(url):
             'adress': list(soup.select('div.d-c-left-age.d-c-left-firm.mt-30 > ul > li:nth-of-type(8) > em')[0].stripped_strings),
             'wants': soup.find('span', {'class': 'delivery-num'}).get_text().split('：')[1],
             'age': soup.select(' div.d-c-left-age.d-c-left-firm.mt-30 > ul > li:nth-of-type(5) > em')[0].text,
+            # 这里将这些信息列表化， 便于以后处理很分析
             'welfare': list(soup.select('div.d-c-left-weal.d-left-weal-firm.clearfix.mb-30 > div > ul')[0].stripped_strings),
         }
+        # 一次次塞进数据库
         item_info.insert_one(data)
         print(data)
