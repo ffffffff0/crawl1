@@ -83,6 +83,8 @@ wed = requests.get('http://www.bing.com', headers=headers, proxies=proxies)
 ```
 *关于代理ip* 可以在 http://cn-proxy.com/ 找到， 当然也可以写一个爬虫，将代理爬下来,*其实有种东西叫代理池*.
 
+有关http的头字段可以参见 [http头字段](https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5%E5%88%97%E8%A1%A8)
+
 *headers 的位置*：
 ![img](headers.png)
 
