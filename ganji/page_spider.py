@@ -4,6 +4,7 @@ import pymongo
 import re
 import random
 import time
+from lxml import etree
 
 # 连接mongodb
 client = pymongo.MongoClient('localhost', 27017, connect=False)
@@ -48,10 +49,10 @@ def get_link_form(channel, page):
     else:
         pass
 
-# spider 2
+# spider 2  我用了两种提取信息的方式， BeautifulSoup 和 lxml
 
 
-def get_item_info(url):
+def bs_get_item_info(url):
     wd_data = requests.get(url, headers=header)
 	# 判断页面的是否有效
     if wd_data.status_code == 404:
@@ -73,6 +74,35 @@ def get_item_info(url):
             # 这里将这些信息列表化， 便于以后处理很分析
             'welfare': list(soup.select('div.d-c-left-weal.d-left-weal-firm.clearfix.mb-30 > div > ul')[0].stripped_strings),
         }
+        # 一次次塞进数据库
+        item_info.insert_one(data)
+        print(data)
+
+
+
+def lxml_get_item_info(url):
+    wd_data = requests.get(url, headers=header)
+	# 判断页面的是否有效
+    if wd_data.status_code == 404:
+        pass
+    else:
+        soup = etree.HTML(wd_data.text)
+        # select return list, find return   <class 'bs4.element.Tag'>
+		# 将所需要的信息装进一个字典中
+        data = {
+            'title': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[1]/h1/text()')[0],
+            'postion_name': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[1]/em/a/text()')[0],
+            'Education': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[3]/em/text()')[0],
+            'salary': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[2]/em/text()')[0],
+            'work_experience': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[4]/em/text()')[0],
+            'want_person': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[6]/em/text()')[0],
+            'adress': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[8]/em/a/text()'),
+            'wants': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[1]/p/span[3]/text()')[0],
+            'age': soup.xpth('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[5]/em/text()')[0],
+            # 这里将这些信息列表化， 便于以后处理很分析
+            'welfare': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[6]/div/ul/li/text()'),
+        }
+
         # 一次次塞进数据库
         item_info.insert_one(data)
         print(data)
