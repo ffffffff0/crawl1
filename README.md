@@ -152,7 +152,7 @@ href = re.complie('^(https?://)?bj\.ganji\.com.*\.htm')
 3. 由于findAll所返回的对象是一个列表，所以用for循环来进行迭代并储存。
 
 
-#### 函数get_item_info：
+#### 函数 bs_get_item_info and lxml_get_item_info
 
 1. 与上一个函数相似，这个主要是将每一个职位招聘的详情信息，提取并储存。但是要判断一下，这个商品是否已经成交或者下架，如果成交或者下架，那么访问这个页面时状态码应该返回 404. 所以用if判断状态码来进行爬去。
 

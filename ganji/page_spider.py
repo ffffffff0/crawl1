@@ -49,7 +49,7 @@ def get_link_form(channel, page):
     else:
         pass
 
-# spider 2  我用了两种提取信息的方式， BeautifulSoup 和 lxml
+# spider 2  我用了两种提取信息的方式， BeautifulSoup 和 lxml 分别是 css选择器， xpath
 
 
 def bs_get_item_info(url):
@@ -99,7 +99,6 @@ def lxml_get_item_info(url):
             'adress': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[8]/em/a/text()'),
             'wants': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[1]/p/span[3]/text()')[0],
             'age': soup.xpth('//*[@id="wrapper"]/div[4]/div[1]/div[5]/ul/li[5]/em/text()')[0],
-            # 这里将这些信息列表化， 便于以后处理很分析
             'welfare': soup.xpath('//*[@id="wrapper"]/div[4]/div[1]/div[6]/div/ul/li/text()'),
         }
 
