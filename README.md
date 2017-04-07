@@ -5,7 +5,6 @@
 赶集网的爬虫，爬取赶集网上的招聘的板块上的信息并储存。
 *算是以深度优先来进行爬取*
 
-*爬虫的目的是收集数据，数据的格式要便于处理和分析。*
 
 ## 依赖
 
@@ -34,10 +33,7 @@
 
 	```
 
-3. 如果你知道更好：
-	- 一点 HTML CSS HTTP and MongoDB
-
-### 整体结构
+### 结构
 
 ![test](test.jpg)
 
@@ -49,7 +45,7 @@
 
 ![liuchengtu](liuchengtu.png)
 
-### 代码
+### code
 
 ### 首先要观察爬取网站的页面结构
 
@@ -60,7 +56,7 @@
 ### channel_url文件 将招聘板块中的招聘职位分类的链接提取出来。
 
 
-这里的 [requests](http://docs.python-requests.org/zh_CN/latest/index.html) 的作用:
+这里的 [requests](http://docs.python-requests.org/zh_CN/latest/index.html):
 > Requests 唯一的一个非转基因的 Python HTTP 库，人类可以安全享用。
 > *警告：非专业使用其他 HTTP 库会导致危险的副作用，包括：安全缺陷症、冗余代码症、重新发明轮子症、啃文档症、抑郁、头疼、甚至死亡。*
 
@@ -88,7 +84,7 @@ wed = requests.get('http://www.bing.com', headers=headers, proxies=proxies)
 *headers 的位置*：
 ![img](headers.png)
 
-这里的 BeautifulSoup and lxml的作用：
+这里的 BeautifulSoup and lxml：
 > Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库, 这里我使用 lxml 来解析。
 
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/#) 的基本用法：
@@ -189,9 +185,9 @@ list(test)
 
 ## 爬取结果
 
-我的MongoDB中， 其中 url_list的 count 为:*120166*, item_info的 count为:*30726*.
+MongoDB中， 其中 url_list的 count 为:*120166*, item_info的 count为:*30726*.
 
-可能是我url_list先于item_info爬取，url_list有些链接已经失效。
+可能是我的url_list先于item_info爬取，url_list有些链接已经失效。
 
 ## 体会
 
