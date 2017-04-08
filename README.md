@@ -13,7 +13,6 @@
 - pymongo
 - BeautifulSoup and lxml
 
-## 关于爬虫
 
 ### 准备
 
@@ -25,11 +24,11 @@
 
 	win:
 
-	pip install requests, BeautifulSoup4, pymongo, lxml
+	pip install requests, bs4, pymongo, lxml
 
 	linux:
 
-	sudo pip3 install requests, BeautifulSoup4, pymongo, lxml
+	sudo pip3 install requests, bs4, pymongo, lxml
 
 	```
 
