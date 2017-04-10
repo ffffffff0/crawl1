@@ -103,6 +103,11 @@ img = soup.find('img', {'hidefocus': "true"})
 
 关于 lxml 可以参见 [lxml](http://lxml.de/api.html)
 
+
+关于 lxml 与 BeautifulSoup(不同的解析库)的比较， 我写了个文件为 data_plot.ipynb:
+
+![com_ex](com_ex.png)
+
 channel_url 中定义了一个函数， 来进行获取链接，我这里将运行的结果，赋给了channel_list, 当然也可以放进数据库。
 ![images](chanenl_list.png)
 
