@@ -10,12 +10,12 @@ def get_links_from(channel):
 
 
 # if __name__ == '__main__':
-#     pool = Pool(4)
-# 	# 从数据库中将url迭代出来
-#     for link in url_list.find({}, {'_id': 0, 'url': 1}):
-#         pool.apply(bs_get_item_info, args=(link['url'],))
-#     pool.close()
-#     pool.join()
+     pool = Pool(4)
+ 	# 从数据库中将url迭代出来
+     for link in url_list.find({}, {'_id': 0, 'url': 1}):
+         pool.apply(bs_get_item_info, args=(link['url'],))
+     pool.close()
+     pool.join()
 
 if __name__ == '__main__':
 	pool = Pool(4)
